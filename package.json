@@ -1,0 +1,22 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^2.1.0",
+    "astro": "^2.1.2",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@unocss/reset": "^0.50.4",
+    "unocss": "^0.50.4"
+  }
+}
