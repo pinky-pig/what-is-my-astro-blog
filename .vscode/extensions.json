@@ -1,4 +1,10 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "antfu.iconify",
+    "dbaeumer.vscode-eslint",
+    "voorjaar.windicss-intellisense",
+    "csstools.postcss"
+  ],
   "unwantedRecommendations": []
 }
