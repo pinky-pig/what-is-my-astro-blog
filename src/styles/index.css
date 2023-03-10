@@ -28,6 +28,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   max-width: 100vw;
+  overflow-x: hidden;
 }
 
 nav ul {
@@ -367,4 +368,34 @@ h2.heading {
 
 :target {
   scroll-margin: calc(var(--theme-sidebar-offset, 5rem) + 2rem) 0 2rem;
+}
+
+::-webkit-scrollbar{
+  width:6px;
+  height:6px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track-piece{
+  width:24px;
+  background-color:transparent;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:vertical{
+  width:24px;
+  height:24px;
+  background: rgb(214, 212, 212);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:horizontal{
+  width:24px;
+  height:24px;
+  background: rgb(214, 212, 212);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-button{
+  display:none;
+}
+::-webkit-scrollbar-corner{
+  display:none;
 }
