@@ -19,8 +19,8 @@ export default defineConfig({
   ],
   theme: {
     breakpoints: {
-      sm: '320px',
-      md: '640px',
+      sm: '360px',
+      md: '720px',
       lg: '1080px',
       xl: '1412px',
     },

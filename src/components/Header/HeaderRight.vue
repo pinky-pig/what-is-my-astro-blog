@@ -4,7 +4,7 @@ import HeaderLink from './HeaderLink.vue'
 </script>
 
 <template>
-  <div class="flex-1 text-right md:-mr-1 mr-1 flex flex-row justify-end items-center">
+  <div class="flex-1 text-right md:-mr-1 mr-1 flex flex-row justify-end items-center font-extrabold">
     <HeaderLink :href="`https://twitter.com/${SITE.twitterId}`" target="_blank">
       <p class="md:inline-block hidden">
         Project

@@ -7,14 +7,14 @@ import HeaderRight from './HeaderRight.vue'
 <template>
   <header>
     <nav
-      class="flex flex-row text-32px py-6 md:px-0 px-3 mx-auto w-full md:max-w-2xl lg:max-w-5xl xl:max-w-7xl max-w-xl"
+      class="flex transition-all flex-row text-32px px-3 py-4 mx-auto w-full md:max-w-2xl lg:max-w-5xl xl:max-w-7xl max-w-384px"
     >
       <div class="flex place-items-center gap-1 text-[2rem] w-200px flex-shrink-0 flex-grow-0">
         <a href="/" class="flex place-items-center">
           <AstroLogo :size="40" />
         </a>
         <a href="/">
-          <p class="text-gray-800 font-bold">{{ SITE.title }}</p>
+          <p class="text-gray-800 font-extrabold">{{ SITE.title }}</p>
         </a>
       </div>
       <HeaderRight />
