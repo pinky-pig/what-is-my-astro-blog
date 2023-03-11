@@ -140,7 +140,8 @@ if (postIndex < allPosts.length) {
 
       @media (max-width: 50em) {
         .logo {
-          display: block;
+          display: flex;
+          place-items:center;
           color: #fff;
           margin-top: -0.1em;
           margin-right: 0.2em;
@@ -188,8 +189,11 @@ if (postIndex < allPosts.length) {
           id="write"
         >
           <h1 class="content-title flex align-middle text-gray-800">
-            <a class="logo inline-block md:hidden visible" href="/"
-              ><AstroLogo size={40} />
+            <a 
+              class="logo md:hidden visible" 
+              href="/"
+            >
+              <AstroLogo size={40} />
             </a>
             {title}
           </h1>
