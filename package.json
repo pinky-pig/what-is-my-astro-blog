@@ -16,7 +16,9 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.35.1",
     "@unocss/reset": "^0.50.4",
+    "eslint": "^8.33.0",
     "unocss": "^0.50.4"
   }
 }

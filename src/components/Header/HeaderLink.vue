@@ -1,13 +1,13 @@
 <script setup lang="ts">
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
 
-const props = defineProps(['href','class'])
+const props = defineProps(['href', 'class'])
 
 // const isActive = href === Astro.url.pathname.replace(/\/$/, '');
 </script>
 
 <template>
-  <a :href="props.href" >
+  <a :href="props.href">
     <slot />
   </a>
 </template>

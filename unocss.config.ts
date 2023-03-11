@@ -24,5 +24,5 @@ export default defineConfig({
       lg: '1080px',
       xl: '1412px',
     },
-  }
+  },
 })
