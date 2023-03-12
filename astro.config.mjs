@@ -20,13 +20,23 @@ function defaultLayoutPlugin() {
     if (!filePath.includes('/src/pages/posts/'))
       return
 
-    file.data.astro.frontmatter.layout = './src/layouts/post.astro'
+    file.data.astro.frontmatter.layout = '/src/layouts/post.astro'
 
     // 头图放到文档中的第一行，会自动帮你处理，也可以用 frontmatter 方式，赋值给 pic 字段
     if (tree.children[0]?.value) {
       const imageElement = parse(tree.children[0].value).querySelector('img')
 
-      file.data.astro.frontmatter.pic = imageElement?.getAttribute('src')
+      // file.data.astro.frontmatter.pic = imageElement?.getAttribute('src')
+
+      if (imageElement?.getAttribute('src')) {
+        file.data.astro.frontmatter.pic = imageElement?.getAttribute('src')
+      }
+      else {
+        unsplash.photos.getRandom().then((res) => {
+          if (res.status === 200 && res.type === 'success')
+            file.data.astro.frontmatter.pic = res?.response?.urls?.regular
+        })
+      }
     }
 
     // 描述放到文档中头图的下一行，会自动帮你处理，也可以用 frontmatter 方式，赋值给 desc 字段
@@ -41,10 +51,10 @@ function defaultLayoutPlugin() {
 
     // 兼容没有头图的情况
     if (!pic) {
-      unsplash.photos.getRandom().then((res) => {
-        if (res.status === 200 && res.type === 'success')
-          file.data.astro.frontmatter.pic = res?.response?.urls?.regular
-      })
+      // unsplash.photos.getRandom().then((res) => {
+      //   if (res.status === 200 && res.type === 'success')
+      //     file.data.astro.frontmatter.pic = res?.response?.urls?.regular
+      // })
       // file.data.astro.frontmatter.pic = SITE.pic
     }
 
