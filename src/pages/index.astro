@@ -1,45 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header/Header.vue';
-import HeadCommon from '../components/HeadCommon.astro';
-import HeadSEO from '../components/HeadSEO.astro';
-import { SITE } from '../config';
-import {sortPosts} from '../util'
-import Footer from '../components/Footer.astro';
-
-const posts = await Astro.glob('./posts/*.md');
-const allPosts = sortPosts(posts);
+import Header from '../components/Header/Header.vue'
+import HeadCommon from '../components/HeadCommon.astro'
+import HeadSEO from '../components/HeadSEO.astro'
+import { SITE } from '../config'
+import Footer from '../components/Footer.astro'
+import Profile from './index.md'
 ---
 
-<Layout title="王小博博">
-
-	<head>
+<html lang="ch">
+  <head>
     <HeadCommon />
-    <HeadSEO pageURL={SITE.profilePage} content={{}} />
+    <HeadSEO pageURL={SITE.homePage} content={{}} />
     <title>{SITE.title}</title>
   </head>
 
-	<body>
+  <body>
     <Header />
-    <div
-      class="mx-auto transition-all -mt-5 mb-12 md:box-border box-content px-3 w-full max-w-xl md:max-w-2xl xl:max-w-7xl lg:max-w-5xl"
-    >
-      <div
-        class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mx-0 md:-mr-5 mr-0"
-      >
-        <!-- {allPosts.map((p) => <Card post={p} />)} -->
-        profile
+    <div class="mx-auto transition-all -mt-5 mb-12 md:box-border box-content px-3 w-full max-w-xl md:max-w-2xl xl:max-w-7xl lg:max-w-5xl">
+      <div class="p-8 mt-20px border-solid border border-black mx-0 md:-mr-5 mr-0">
+        <Profile />
       </div>
     </div>
-    <Footer/>
-  </body>
-	
-		<!-- <Card
+    <Footer />
+  </body><!-- <Card
 			href="https://docs.astro.build/"
 			title="Documentation"
 			body="Learn how Astro works and explore the official API docs."
 		/> -->
-</Layout>
-
-
+</html>

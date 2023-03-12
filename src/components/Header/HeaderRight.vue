@@ -5,7 +5,7 @@ import HeaderLink from './HeaderLink.vue'
 
 <template>
   <div class="flex-1 text-right md:-mr-1 mr-1 flex flex-row justify-end items-center font-extrabold">
-    <HeaderLink :href="SITE.profilePage">
+    <HeaderLink :href="SITE.homePage">
       <p class="md:inline-block hidden">
         Profile
       </p>
@@ -17,17 +17,13 @@ import HeaderLink from './HeaderLink.vue'
       </p>
     </HeaderLink>
 
-    <HeaderLink :href="SITE.tipsPage">
-      Tips
-    </HeaderLink>
-
     <HeaderLink :href="`https://github.com/${SITE.githubId}`" target="_blank">
       <p class="md:inline-block hidden">
         GitHub
       </p>
     </HeaderLink>
 
-    <HeaderLink href="/rss.xml" target="_blank" class="lg:inline-block hidden">
+    <HeaderLink href="https://bento.me/pinky-pig" target="_blank" class="lg:inline-block hidden">
       More
     </HeaderLink>
   </div>

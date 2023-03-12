@@ -12,6 +12,9 @@ function defaultLayoutPlugin() {
   return function (tree, file) {
     const filePath = file.history[0]
 
+    if (!filePath.includes('/src/pages/posts/'))
+      return
+
     file.data.astro.frontmatter.layout = './src/layouts/post.astro'
 
     // 头图放到文档中的第一行，会自动帮你处理，也可以用 frontmatter 方式，赋值给 pic 字段
