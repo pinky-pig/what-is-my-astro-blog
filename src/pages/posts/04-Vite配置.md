@@ -1,6 +1,6 @@
 <img src=https://gw.alipayobjects.com/zos/k/h5/hzL4LG.jpg width=800/>  
 
-<small>封面图摄于安吉晚饭黄昏，伴随着一点凉风吹来，还挺有意境的。</small>  
+<small>Vite 配置中文手册</small>  
 
 # vite 打包构建配置
 
@@ -17,7 +17,7 @@ export default ({ command }: ConfigEnv) =>
     plugins: [
       vue(),
       Unocss(),
-      Pages({ dirs: 'src/views'}),
+      Pages({ dirs: 'src/views' }),
       vueJsx(),
       AutoImport({
         imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core'],
@@ -61,7 +61,7 @@ export default ({ command }: ConfigEnv) =>
       postcss: '', // 内联的 PostCSS 配置 如果提供了该内联配置，Vite 将不会搜索其他 PostCSS 配置源
       preprocessorOptions: { // css的预处理器选项
         scss: {
-          additionalData: `$injectedColor: orange;`
+          additionalData: '$injectedColor: orange;'
         },
         less: {
           modifyVars: {
@@ -94,7 +94,7 @@ export default ({ command }: ConfigEnv) =>
         '/api': {
           target: 'http://jsonplaceholder.typicode.com',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          rewrite: path => path.replace(/^\/api/, '')
         }
       },
       cors: true, // 配置 CORS
@@ -124,9 +124,9 @@ export default ({ command }: ConfigEnv) =>
       sourcemap: false, // 构建后是否生成 source map 文件
       rollupOptions: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
+          if (id.includes('node_modules'))
             return id.toString().split('node_modules/')[1].split('/')[0].toString()
-          }
+
         },
       }, // 自定义底层的 Rollup 打包配置
       lib: {}, // 构建为库
@@ -150,7 +150,7 @@ export default ({ command }: ConfigEnv) =>
         '/api': {
           target: 'http://jsonplaceholder.typicode.com',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          rewrite: path => path.replace(/^\/api/, '')
         }
       },
       cors: true, // 配置 CORS

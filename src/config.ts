@@ -7,7 +7,13 @@ export const SITE = {
   pic: 'https://cdn.fliggy.coblogPagem/upic/2XFNGI.png',
   homePage: '/',
   blogPage: '/weekly',
-  twitterId: 'HiTw93',
+  twitterId: 'Doub1eG',
   githubId: 'pinky-pig',
   repo: 'pinky-pig/what-is-my-astro-blog',
+}
+
+export enum UnsplashSetting {
+  ApplicationName = 'what-is-my-new-tab',
+  AccessKey = 'KM1kMtcaYX2SZQR1m_o-pwg4RJZUVivPZgfJsbw5h2o',
+  SecretKey = 'ma572d0k1fKQIBlLm49h9k3A7np9X_ezS1hfu4Upaeo',
 }
