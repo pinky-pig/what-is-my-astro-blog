@@ -1,43 +1,43 @@
 ---
-import '../styles/heti.min.css';
-import HeadCommon from '../components/HeadCommon.astro';
-import HeadSEO from '../components/HeadSEO.astro';
-import Footer from '../components/Footer.astro';
-import AstroLogo from '../components/Header/AstroLogo.vue';
-import LeftSidebar from '../components/LeftSidebar.astro';
-import { SITE } from '../config';
-import { parseTitle, sortPosts, getIndex } from '../util';
+import '../styles/heti.min.css'
+import HeadCommon from '../components/HeadCommon.astro'
+import HeadSEO from '../components/HeadSEO.astro'
+import Footer from '../components/Footer.astro'
+import AstroLogo from '../components/Header/AstroLogo.vue'
+import LeftSidebar from '../components/LeftSidebar.astro'
+import { SITE } from '../config'
+import { parseTitle, sortPosts, getIndex } from '../util'
 
 export interface Props {
-  frontmatter: { date: any; pic: any; desc: any; url: any; twitterImg: any };
-  title: string;
+  frontmatter: { date: any; pic: any; desc: any; url: any; twitterImg: any }
+  title: string
 }
 
-const pageUrl = new URL(Astro.request.url);
-const currentPage = pageUrl.pathname;
+const pageUrl = new URL(Astro.request.url)
+const currentPage = pageUrl.pathname
 
-let title = parseTitle(currentPage);
+let title = parseTitle(currentPage)
 
-const { date, pic, desc, url, twitterImg } = Astro.props.frontmatter;
+const { date, pic, desc, url, twitterImg } = Astro.props.frontmatter
 const content = {
   title,
   image: pic,
   description: desc,
   twitterImg,
-};
-const currentUrl = SITE.homePage + currentPage;
+}
+const currentUrl = SITE.homePage + currentPage
 
 // 或者下一篇文章
-const posts = await Astro.glob('../pages/posts/*.md');
-const allPosts = sortPosts(posts);
-const postIndex = getIndex(currentPage);
-let nextUrl = '';
+const posts = await Astro.glob('../pages/posts/*.md')
+const allPosts = sortPosts(posts)
+const postIndex = getIndex(currentPage)
+let nextUrl = ''
 if (postIndex > 2) {
-  nextUrl = allPosts[allPosts.length - postIndex + 1].url;
+  nextUrl = allPosts[allPosts.length - postIndex + 1].url
 }
-let prevUrl = '';
+let prevUrl = ''
 if (postIndex < allPosts.length) {
-  prevUrl = allPosts[allPosts.length - postIndex - 1].url;
+  prevUrl = allPosts[allPosts.length - postIndex - 1].url
 }
 ---
 
@@ -141,7 +141,7 @@ if (postIndex < allPosts.length) {
       @media (max-width: 50em) {
         .logo {
           display: flex;
-          place-items:center;
+          place-items: center;
           color: #fff;
           margin-top: -0.1em;
           margin-right: 0.2em;
@@ -184,15 +184,9 @@ if (postIndex < allPosts.length) {
         <LeftSidebar currentPage={currentPage} />
       </aside>
       <div id="grid-main">
-        <div
-          class="markdown-body heti md:mx-auto md:pb-20 pb-14 xl:max-w-7xl w-full lg:max-w-5xl md:max-w-2xl md:pl-3.5"
-          id="write"
-        >
+        <div class="markdown-body heti md:mx-auto md:pb-20 pb-14 xl:max-w-7xl w-full lg:max-w-5xl md:max-w-2xl md:pl-3.5" id="write">
           <h1 class="content-title flex align-middle text-gray-800">
-            <a 
-              class="logo md:hidden visible" 
-              href="/"
-            >
+            <a class="logo md:hidden visible" href="/">
               <AstroLogo size={40} />
             </a>
             {title}
@@ -201,57 +195,34 @@ if (postIndex < allPosts.length) {
           <div class="flex align-middle justify-center mt-4">
             <a
               class="inline-block h-10 items-center rounded bg-[#262626] px-5 py-3 text-sm font-medium text-white pay-button"
-              href="https://miaoyan.app/cats.html?name=潮流周刊"
+              href="https://github.com/pinky-pig/what-is-my-astro-blog"
               target="_blank"
-              rel="noreferrer">喜欢周刊 → 去喂猫 ❤️</a
+              rel="noreferrer">支持 → ❤️</a
             >
           </div>
           <hr />
-          <div
-            class="flex justify-between md:flex-row flex-col mt-2 post-footer"
-          >
+          <div class="flex justify-between md:flex-row flex-col mt-2 post-footer">
             <div class="text-gray-800 flex-1">
-              发布日期：<a
-                href={`https://github.com/${SITE.repo}/tree/main/src/pages${url}.md`}
-                target="_blank"
-                title="Edit">{date}</a
-              >
+              发布日期：<a href={`https://github.com/${SITE.repo}/tree/main/src/pages${url}.md`} target="_blank" title="Edit">{date}</a>
             </div>
             <div class="md:mt-0 mt-4 flex-1 text-right">
               {nextUrl ? <a href={nextUrl}>下一篇 |</a> : null}
               {prevUrl ? <a href={prevUrl}>上一篇 |</a> : null}
               <a href="/">去首页 |</a>
-              <a
-                href={`https://twitter.com/${SITE.twitterId}`}
-                target="_blank"
-                title="Follow">Twitter</a
-              >
-              <a
-                href={`https://github.com/${SITE.githubId}/weekly`}
-                title="Star"
-                target="_blank"
-                class="lg:inline-block hidden"
-              >
-                | Github</a
-              >
-              <a
-                href="/rss.xml"
-                title="Subscribe"
-                target="_blank"
-                class="xl:inline-block hidden"
-              >
-                | RSS</a
-              >
+              <a href={`https://twitter.com/${SITE.twitterId}`} target="_blank" title="Follow">Twitter</a>
+              <a href={`https://github.com/${SITE.githubId}/weekly`} title="Star" target="_blank" class="lg:inline-block hidden"> | Github</a>
+              <a href="/rss.xml" title="Subscribe" target="_blank" class="xl:inline-block hidden"> | RSS</a>
             </div>
           </div>
         </div>
+
         <script
           src="https://giscus.app/client.js"
           data-repo={SITE.repo}
-          data-repo-id="R_kgDOG4TsQA"
+          data-repo-id="R_kgDOJHrtiQ"
           data-category="General"
-          data-category-id="DIC_kwDOG4TsQM4CR4bV"
-          data-mapping="title"
+          data-category-id="DIC_kwDOJHrtic4CU0DB"
+          data-mapping="pathname"
           data-strict="0"
           data-reactions-enabled="1"
           data-emit-metadata="0"
