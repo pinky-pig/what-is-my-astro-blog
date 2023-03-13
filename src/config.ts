@@ -7,7 +7,7 @@ export const SITE = {
   pic: 'https://cdn.fliggy.coblogPagem/upic/2XFNGI.png',
   homePage: '/',
   profilePage: '/profile',
-  twitterId: 'Doub1eG',
+  twitterId: 'ArvinnWang',
   githubId: 'pinky-pig',
   repo: 'pinky-pig/what-is-my-astro-blog',
 }
