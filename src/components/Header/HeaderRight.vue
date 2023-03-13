@@ -6,15 +6,11 @@ import HeaderLink from './HeaderLink.vue'
 <template>
   <div class="flex-1 text-right md:-mr-1 mr-1 flex flex-row justify-end items-center font-extrabold">
     <HeaderLink :href="SITE.homePage">
-      <p class="md:inline-block hidden">
-        Profile
-      </p>
+      Profile
     </HeaderLink>
 
     <HeaderLink :href="SITE.blogPage">
-      <p class="md:inline-block hidden">
-        Weekly
-      </p>
+      Weekly
     </HeaderLink>
 
     <HeaderLink :href="`https://github.com/${SITE.githubId}`" target="_blank">
@@ -24,7 +20,9 @@ import HeaderLink from './HeaderLink.vue'
     </HeaderLink>
 
     <HeaderLink href="https://bento.me/pinky-pig" target="_blank" class="lg:inline-block hidden">
-      More
+      <p class="md:inline-block hidden">
+        More
+      </p>
     </HeaderLink>
   </div>
 </template>
