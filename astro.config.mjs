@@ -17,7 +17,7 @@ function defaultLayoutPlugin() {
   return function (tree, file) {
     const filePath = file.history[0]
 
-    if (!filePath.includes('/src/pages/posts/'))
+    if (!(filePath.includes('/src/pages/posts/') || filePath.includes('\\src\\pages\\posts\\')))
       return
 
     file.data.astro.frontmatter.layout = '/src/layouts/post.astro'
