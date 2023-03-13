@@ -13,8 +13,8 @@
 - 🍑 
 
 <!-- [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics) -->
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://what-is-my-astro-blog.vercel.app/)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/pinky-pig/what-is-my-astro-blog)
+[![Preview in Github Pages](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://what-is-my-astro-blog.vercel.app/)
+[![Open GitHub Repo](https://github.com/codespaces/badge.svg)](https://github.com/pinky-pig/what-is-my-astro-blog)
 
 
 ## 🚀 博客结构
