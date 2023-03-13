@@ -6,11 +6,11 @@ import HeaderLink from './HeaderLink.vue'
 <template>
   <div class="flex-1 text-right md:-mr-1 mr-1 flex flex-row justify-end items-center font-extrabold">
     <HeaderLink :href="SITE.homePage">
-      Profile
+      Weekly
     </HeaderLink>
 
-    <HeaderLink :href="SITE.blogPage">
-      Weekly
+    <HeaderLink :href="SITE.profilePage">
+      Profile
     </HeaderLink>
 
     <HeaderLink :href="`https://github.com/${SITE.githubId}`" target="_blank">
