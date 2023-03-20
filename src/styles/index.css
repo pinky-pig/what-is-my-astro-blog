@@ -9,7 +9,7 @@
 }
 
 :root {
-  background: #F7F2F2;
+  background: #fff;
   --user-font-scale: 1rem - 16px;
   --max-width: calc(100% - 1rem);
 }
