@@ -16,6 +16,14 @@
 [![Preview in Github Pages](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://what-is-my-astro-blog.vercel.app/)
 [![Open GitHub Repo](https://github.com/codespaces/badge.svg)](https://github.com/pinky-pig/what-is-my-astro-blog)
 
+## 发布流程
+
+- 找到 `/src/pages/posts/` 文件夹下，新增博客，可以直接复制粘贴一个文件 `01-首次记录` ，然后再改一下主题名字 "首次记录" -> "今日盛况"，再去修改文件内的内容。
+- 添加好内容后 `npm run dev` 启动代码，查看网站
+- `npm run build` 打包
+- `npm run preview` 预览
+- 提交，这里是直接挂载到 `vercel` 了，就不用主动 deploy 了
+
 
 ## 🚀 博客结构
 
